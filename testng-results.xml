@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results ignored="1" total="4" passed="3" failed="0" skipped="0">
+  <reporter-output>
+  </reporter-output>
+  <suite started-at="2021-12-10T16:53:02 GMT" name="Default Suite" finished-at="2021-12-10T16:54:29 GMT" duration-ms="86782">
+    <groups>
+    </groups>
+    <test started-at="2021-12-10T16:53:02 GMT" name="myStoreProject" finished-at="2021-12-10T16:54:29 GMT" duration-ms="86782">
+      <class name="com.mystore.testcases.IndexPageTest">
+        <test-method is-config="true" signature="setup()[pri:0, instance:com.mystore.testcases.IndexPageTest@6ab7a896]" started-at="2021-12-10T16:53:55 GMT" name="setup" finished-at="2021-12-10T16:54:11 GMT" duration-ms="15471" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setup -->
+        <test-method signature="verifyLogo()[pri:0, instance:com.mystore.testcases.IndexPageTest@6ab7a896]" started-at="2021-12-10T16:54:11 GMT" name="verifyLogo" finished-at="2021-12-10T16:54:11 GMT" duration-ms="334" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifyLogo -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.mystore.testcases.IndexPageTest@6ab7a896]" started-at="2021-12-10T16:54:11 GMT" name="tearDown" finished-at="2021-12-10T16:54:12 GMT" duration-ms="1076" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method is-config="true" signature="setup()[pri:0, instance:com.mystore.testcases.IndexPageTest@6ab7a896]" started-at="2021-12-10T16:54:12 GMT" name="setup" finished-at="2021-12-10T16:54:28 GMT" duration-ms="15549" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setup -->
+        <test-method signature="verifyTitle()[pri:0, instance:com.mystore.testcases.IndexPageTest@6ab7a896]" started-at="2021-12-10T16:54:28 GMT" name="verifyTitle" finished-at="2021-12-10T16:54:28 GMT" duration-ms="37" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifyTitle -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.mystore.testcases.IndexPageTest@6ab7a896]" started-at="2021-12-10T16:54:28 GMT" name="tearDown" finished-at="2021-12-10T16:54:29 GMT" duration-ms="1129" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+      </class> <!-- com.mystore.testcases.IndexPageTest -->
+      <class name="com.mystore.testcases.LoginPageTest">
+        <test-method is-config="true" signature="readConfig()[pri:0, instance:com.mystore.testcases.LoginPageTest@b62fe6d]" started-at="2021-12-10T16:53:02 GMT" name="readConfig" finished-at="2021-12-10T16:53:02 GMT" duration-ms="47" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- readConfig -->
+        <test-method is-config="true" signature="setup()[pri:0, instance:com.mystore.testcases.LoginPageTest@b62fe6d]" started-at="2021-12-10T16:53:02 GMT" name="setup" finished-at="2021-12-10T16:53:26 GMT" duration-ms="23718" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setup -->
+        <test-method signature="LoginTest()[pri:0, instance:com.mystore.testcases.LoginPageTest@b62fe6d]" started-at="2021-12-10T16:53:26 GMT" name="LoginTest" finished-at="2021-12-10T16:53:55 GMT" duration-ms="28700" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- LoginTest -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.mystore.testcases.LoginPageTest@b62fe6d]" started-at="2021-12-10T16:53:55 GMT" name="tearDown" finished-at="2021-12-10T16:53:55 GMT" duration-ms="610" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+      </class> <!-- com.mystore.testcases.LoginPageTest -->
+    </test> <!-- myStoreProject -->
+  </suite> <!-- Default Suite -->
+</testng-results>

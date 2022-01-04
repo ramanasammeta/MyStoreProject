@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="All Test Suite">
+    <test verbose="2" preserve-order="true" name="C:/DHL/WORKSPACE/Automation/MyStore">
+        <parameter name="browser" value="Chrome"></parameter>
+        <groups>
+            <run>
+                <include name="Smoke"></include>
+            </run>
+        </groups>
+
+        <classes>
+            <class name="com.mystore.testcases.AccountCreationPageTest">
+                <methods>
+                    <include name="creteAccountTest"/>
+                </methods>
+            </class>
+            <class name="com.mystore.testcases.AddToCartTest">
+                <methods>
+                    <include name="addToCartTest"/>
+                </methods>
+            </class>
+            <class name="com.mystore.testcases.EndToEndTest">
+                <methods>
+                    <include name="endToEndTest"/>
+                </methods>
+            </class>
+            <class name="com.mystore.testcases.HomePageTest">
+                <methods>
+                    <include name="wishListTest"/>
+                    <include name="orderHistoryandDetailsTest"/>
+                </methods>
+            </class>
+            <class name="com.mystore.testcases.IndexPageTest">
+                <methods>
+                    <include name="verifyLogo"/>
+                    <include name="verifyTitle"/>
+                </methods>
+            </class>
+            <class name="com.mystore.testcases.LoginPageTest">
+                <methods>
+                    <include name="LoginTest"/>
+                </methods>
+            </class>
+            <class name="com.mystore.testcases.OrderPageTest">
+                <methods>
+                    <include name="verifyTotalPrice"/>
+                </methods>
+            </class>
+            <class name="com.mystore.testcases.SearchResultPageTest">
+                <methods>
+                    <include name="productAvailabilityTest"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>
