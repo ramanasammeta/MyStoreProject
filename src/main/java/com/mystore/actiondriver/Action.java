@@ -207,15 +207,15 @@ public class Action extends BaseClass {
         String dateName = new SimpleDateFormat("yyyyMMddhhmmss").format(new Date());
         TakesScreenshot takesScreenshot = (TakesScreenshot) driver;
         File source = takesScreenshot.getScreenshotAs(OutputType.FILE);
-        String destination = System.getProperty("user.dir") + "\\ScreenShots\\" + filename + "-" + dateName + ".png";
-
+        //String destination = System.getProperty("user.dir") + "\\ScreenShots\\" + filename + "-" + dateName + ".png";
+        // This new path for jenkins
+        String newImageString = "http://localhost:8080/job/MyStoreProject/ws/ScreenShots/" + filename + "_" + dateName + ".png";
         try {
-            FileUtils.copyFile(source, new File(destination));
+            FileUtils.copyFile(source, new File(newImageString));
         } catch (Exception e) {
             e.getMessage();
         }
-        // This new path for jenkins
-        String newImageString = "http://localhost:8080/job/MyStoreProject/ws/ScreenShots/" + filename + "_" + dateName + ".png";
+
         return newImageString;
 
     }
