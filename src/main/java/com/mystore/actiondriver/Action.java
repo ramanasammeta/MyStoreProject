@@ -215,8 +215,8 @@ public class Action extends BaseClass {
             e.getMessage();
         }
         // This new path for jenkins
-     //   String newImageString = "http://localhost:8082/job/MyStoreProject/ws/MyStoreProject/ScreenShots/" + filename + "_" + dateName + ".png";
-        return destination;
+        String newImageString = "http://localhost:8080/job/MyStoreProject/ws/ScreenShots/" + filename + "_" + dateName + ".png";
+        return newImageString;
     }
     public static void pageLoadTimeOut(WebDriver driver, int timeOut) {
         driver.manage().timeouts().pageLoadTimeout(timeOut, TimeUnit.SECONDS);
