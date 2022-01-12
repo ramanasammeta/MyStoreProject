@@ -81,7 +81,7 @@ public class DataProviders {
         }
         return data;
     }
-    @DataProvider(name = "newAcountDetailsData")
+    @DataProvider(name = "AccountCreationData")
     public Object[][] accountCreation() {
 
         // Totals rows count
