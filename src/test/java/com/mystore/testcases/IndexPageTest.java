@@ -34,7 +34,7 @@ public class IndexPageTest extends BaseClass {
     public void verifyTitle() throws Throwable{
         Log.startTestCase("verifyTitle");
         String actTitle=indexPg.geMyStoreTitle();
-        Assert.assertEquals(actTitle,"My Store1");
+        Assert.assertEquals(actTitle,"My Store");
         Log.endTestCase("verifyTitle");
     }
 }

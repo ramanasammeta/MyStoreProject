@@ -43,7 +43,7 @@ public class HomePageTest extends BaseClass {
         loginPg=indexPg.clickOnSignIn();
         homePg= loginPg.login(uname,pswd);
         boolean result= homePg.validateOrderHistory();
-        Assert.assertTrue(false);
+        Assert.assertTrue(result);
         Log.endTestCase("orderHistoryandDetailsTest");
     }
 }
