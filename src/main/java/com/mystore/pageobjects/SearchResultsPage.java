@@ -6,12 +6,10 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-import java.util.Iterator;
-import java.util.Set;
 
 public class SearchResultsPage extends BaseClass{
 
-    @FindBy(xpath="//*[@id=\"center_column\"]/ul/li")
+    @FindBy(xpath="//a[@title='View']")
     WebElement productResults;
 
     public SearchResultsPage(){
@@ -21,7 +19,8 @@ public class SearchResultsPage extends BaseClass{
         return Action.isDisplayed(getDriver(),productResults);
     }
     public AddToCartPage clickOnProduct() throws Throwable{
-        Action.click(getDriver(),productResults);
+        Action.fluentWait(getDriver(), productResults, 10);
+        Action.JSClick(getDriver(),productResults);
         return new AddToCartPage();
 
     }
