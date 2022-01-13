@@ -12,11 +12,14 @@ public class SearchResultsPage extends BaseClass{
     @FindBy(xpath="//a[@title='View']")
     WebElement productResults;
 
+    @FindBy(xpath="//*[@id=\"center_column\"]//img")
+    private WebElement productResult;
+
     public SearchResultsPage(){
         PageFactory.initElements(getDriver(),this);
     }
     public boolean isProductAvailable(){
-        return Action.isDisplayed(getDriver(),productResults);
+        return Action.isDisplayed(getDriver(),productResult);
     }
     public AddToCartPage clickOnProduct() throws Throwable{
         Action.fluentWait(getDriver(), productResults, 10);
