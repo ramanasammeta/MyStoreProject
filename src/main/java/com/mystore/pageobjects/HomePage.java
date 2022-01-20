@@ -7,21 +7,22 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
 public class HomePage extends BaseClass {
+    Action action= new Action();
     @FindBy(xpath="//span[normalize-space()='My wishlists']")
-    WebElement myWishList;
+    private WebElement myWishList;
 
     @FindBy(xpath="//span[normalize-space()='Order history and details']")
-    WebElement orderHistory;
+    private WebElement orderHistory;
 
     public HomePage(){
         PageFactory.initElements(getDriver(), this);
 
     }
     public boolean validateMyWishList() throws Throwable{
-        return Action.isDisplayed(getDriver(),myWishList);
+        return action.isDisplayed(getDriver(),myWishList);
     }
     public boolean validateOrderHistory() throws Throwable{
-        return Action.isDisplayed(getDriver(), orderHistory);
+        return action.isDisplayed(getDriver(), orderHistory);
     }
     public String getCurrUrl(){
         String homePagURL=getDriver().getCurrentUrl();

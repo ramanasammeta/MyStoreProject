@@ -7,15 +7,16 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
 public class AddressPage extends BaseClass {
+    Action action= new Action();
     @FindBy(xpath="//button[@name='processAddress']//span[contains(text(),'Proceed to checkout')]")
-    WebElement proceedToCheckOut;
+    private WebElement proceedToCheckOut;
 
     public AddressPage(){
         PageFactory.initElements(getDriver(),this);
     }
     public ShippingPage clickOnCheckOut() throws Throwable{
 
-        Action.click(getDriver(),proceedToCheckOut);
+        action.click(getDriver(),proceedToCheckOut);
         return new ShippingPage();
     }
 }

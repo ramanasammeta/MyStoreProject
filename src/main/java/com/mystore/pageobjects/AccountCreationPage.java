@@ -7,66 +7,67 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
 public class AccountCreationPage extends BaseClass {
+    Action action= new Action();
     @FindBy(xpath = "//h1[normalize-space()='Create an account']")
-    WebElement formTitle;
+    private WebElement formTitle;
 
     @FindBy(id="id_gender1")
-    WebElement mr;
+    private WebElement mr;
 
     @FindBy(id="id_gender2")
-    WebElement mrs;
+    private WebElement mrs;
 
     @FindBy(name="customer_firstname")
-    WebElement firstName;
+    private WebElement firstName;
 
     @FindBy(name="customer_lastname")
-    WebElement lastName;
+    private WebElement lastName;
 
     @FindBy(name="passwd")
-    WebElement passWord;
+    private WebElement passWord;
 
     @FindBy(name="days")
-    WebElement days;
+    private WebElement days;
 
 
     @FindBy(name="months")
-    WebElement months;
+    private WebElement months;
 
     @FindBy(name="years")
-    WebElement years;
+    private WebElement years;
 
     @FindBy(name="firstname")
-    WebElement customerFirstName;
+    private WebElement customerFirstName;
 
     @FindBy(name="lastname")
-    WebElement customerLastName;
+    private WebElement customerLastName;
 
     @FindBy(name="company")
-    WebElement companyName;
+    private WebElement companyName;
 
     @FindBy(name="address1")
-    WebElement address;
+    private WebElement address;
 
     @FindBy(name="city")
-    WebElement city;
+    private WebElement city;
 
     @FindBy(name="id_state")
-    WebElement state;
+    private WebElement state;
 
     @FindBy(name="postcode")
-    WebElement postcode;
+    private WebElement postcode;
 
     @FindBy(name="id_country")
-    WebElement country;
+    private WebElement country;
 
     @FindBy(name="phone_mobile")
-    WebElement mobile;
+    private WebElement mobile;
 
     @FindBy(name="alias")
-    WebElement ref;
+    private WebElement ref;
 
     @FindBy(name="submitAccount")
-    WebElement registerBtn;
+    private WebElement registerBtn;
 
 
 
@@ -79,32 +80,32 @@ public class AccountCreationPage extends BaseClass {
                               String zip,String countryName,String mobilePhone) throws Throwable
     {
         if(gender.equalsIgnoreCase("Mr")){
-            Action.click(getDriver(),mr);
+            action.click(getDriver(),mr);
         }
         else{
-            Action.click(getDriver(),mrs);
+            action.click(getDriver(),mrs);
         }
-        Action.type(firstName,fName);
-        Action.type(lastName,lName);
-        Action.type(passWord,pwd);
-        Action.selectByValue(days,day);
-        Action.selectByValue(months,month);
-        Action.selectByValue(years,year);
-        Action.type(companyName,company);
-        Action.type(address,addr);
-        Action.type(city,cityName);
-        Action.selectByVisibleText(stateName,state);
-        Action.type(postcode,zip);
-        Action.selectByVisibleText(countryName,country);
-        Action.type(mobile,mobilePhone);
+        action.type(firstName,fName);
+        action.type(lastName,lName);
+        action.type(passWord,pwd);
+        action.selectByValue(days,day);
+        action.selectByValue(months,month);
+        action.selectByValue(years,year);
+        action.type(companyName,company);
+        action.type(address,addr);
+        action.type(city,cityName);
+        action.selectByVisibleText(stateName,state);
+        action.type(postcode,zip);
+        action.selectByVisibleText(countryName,country);
+        action.type(mobile,mobilePhone);
 
     }
     public HomePage validateRegistration() throws Throwable{
-        Action.click(getDriver(),registerBtn);
+        action.click(getDriver(),registerBtn);
         return new HomePage();
     }
 
     public boolean validateAccountCreatePage(){
-        return Action.isDisplayed(getDriver(),formTitle);
+        return action.isDisplayed(getDriver(),formTitle);
     }
 }

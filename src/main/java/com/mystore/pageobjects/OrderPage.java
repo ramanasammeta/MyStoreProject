@@ -7,15 +7,16 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
 public class OrderPage extends BaseClass {
+    Action action= new Action();
     @FindBy(xpath="//td[@class='cart_unit']/span/span")
-    WebElement unitPrice;
+    private WebElement unitPrice;
 
     @FindBy(id="total_price")
-    WebElement totalPrice;
+    private WebElement totalPrice;
 
    // @FindBy(xpath="//span[text(),'Proceed to checkout']")
    @FindBy(xpath="//*[@id=\"center_column\"]/p[2]/a[1]")
-    WebElement proceedToCheckoutBtn;
+   private WebElement proceedToCheckoutBtn;
 
     public OrderPage(){
         PageFactory.initElements(getDriver(),this);
@@ -34,7 +35,7 @@ public class OrderPage extends BaseClass {
         return finalTotalPrice;
     }
     public LoginPage clickOnCheckOut() throws Throwable{
-        Action.click(getDriver(),proceedToCheckoutBtn);
+        action.click(getDriver(),proceedToCheckoutBtn);
         return new LoginPage();
     }
 }

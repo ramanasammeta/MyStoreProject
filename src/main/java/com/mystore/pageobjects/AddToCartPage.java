@@ -7,42 +7,43 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
 public class AddToCartPage extends BaseClass {
+    Action action= new Action();
     @FindBy(id="quantity_wanted")
-    WebElement quantity;
+    private WebElement quantity;
 
     @FindBy(id="group_1")
-    WebElement size;
+    private WebElement size;
 
     @FindBy(xpath="//span[text()='Add to cart']")
-    WebElement addToCartBtn;
+    private WebElement addToCartBtn;
 
     @FindBy(xpath="//h2[normalize-space()='Product successfully added to your shopping cart']")
-    WebElement addToCartMsg;
+    private WebElement addToCartMsg;
 
     @FindBy(xpath="//span[normalize-space()='Proceed to checkout']")
-    WebElement proceedToCheckOutBtn;
+    private WebElement proceedToCheckOutBtn;
 
 
     public AddToCartPage(){
         PageFactory.initElements(getDriver(),this);
     }
     public void enterQuantity(String qty) throws Throwable{
-        Action.type(quantity,qty);
+        action.type(quantity,qty);
     }
     public void selectSize(String sizeVal) throws Throwable {
-        Action.selectByVisibleText(sizeVal,size);
+        action.selectByVisibleText(sizeVal,size);
     }
     public void clickOnAddToCart() throws Throwable{
 
-        Action.click(getDriver(),addToCartBtn);
+        action.click(getDriver(),addToCartBtn);
     }
     public boolean validateAddToCart(){
-        Action.fluentWait(getDriver(),addToCartMsg,10);
-        return Action.isDisplayed(getDriver(),addToCartMsg);
+        action.fluentWait(getDriver(),addToCartMsg,10);
+        return action.isDisplayed(getDriver(),addToCartMsg);
     }
     public OrderPage clickOnCheckOut() {
-        Action.fluentWait(getDriver(),proceedToCheckOutBtn,10);
-        Action.JSClick(getDriver(), proceedToCheckOutBtn);
+        action.fluentWait(getDriver(),proceedToCheckOutBtn,10);
+        action.JSClick(getDriver(), proceedToCheckOutBtn);
         return new OrderPage();
     }
 }

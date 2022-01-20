@@ -7,30 +7,31 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
 public class IndexPage extends BaseClass {
+    Action action= new Action();
     @FindBy(xpath = "//a[@class='login']")
-    WebElement signInBtn;
+    private WebElement signInBtn;
 
     @FindBy(xpath = "//img[@class='logo img-responsive']")
-    WebElement myStoreLogo;
+    private WebElement myStoreLogo;
 
     @FindBy(id = "search_query_top")
-    WebElement searchProductBox;
+    private WebElement searchProductBox;
 
     @FindBy(name = "submit_search")
-    WebElement searchButton;
+    private WebElement searchButton;
     
     public IndexPage(){
         PageFactory.initElements(getDriver(), this);
         
     }
     public LoginPage clickOnSignIn() throws Throwable{
-        Action.fluentWait(getDriver(), signInBtn, 10);
-        Action.click(getDriver(),signInBtn);
+        action.fluentWait(getDriver(), signInBtn, 10);
+        action.click(getDriver(),signInBtn);
         return new LoginPage();
         
     }
     public boolean validateLogo(){
-        return Action.isDisplayed(getDriver(),myStoreLogo);
+        return action.isDisplayed(getDriver(),myStoreLogo);
         
     }
     public String geMyStoreTitle(){
@@ -39,8 +40,8 @@ public class IndexPage extends BaseClass {
         
     }
     public SearchResultsPage searchProduct(String productName){
-        Action.type(searchProductBox,productName);
-        Action.click(getDriver(),searchButton);
+        action.type(searchProductBox,productName);
+        action.click(getDriver(),searchButton);
         return new SearchResultsPage();
     }
 }

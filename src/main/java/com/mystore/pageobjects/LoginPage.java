@@ -7,39 +7,41 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
 public class LoginPage extends BaseClass {
+    Action action= new Action();
     @FindBy(id="email")
-    WebElement userName;
+    private WebElement userName;
 
     @FindBy(id="passwd")
-    WebElement password;
+    private WebElement password;
 
     @FindBy(id="SubmitLogin")
-    WebElement signInBtn;
+    private WebElement signInBtn;
 
     @FindBy(id="email_create")
-    WebElement emailForNewAccount;
+    private WebElement emailForNewAccount;
 
     @FindBy(name="SubmitCreate")
-    WebElement createNewAccountBtn;
+    private WebElement createNewAccountBtn;
+
     public LoginPage(){
         PageFactory.initElements(getDriver(),this);
     }
     public HomePage login(String uName, String pwd) throws Throwable{
-        Action.type(userName,uName);
-        Action.type(password,pwd);
-        Action.click(getDriver(),signInBtn);
+        action.type(userName,uName);
+        action.type(password,pwd);
+        action.click(getDriver(),signInBtn);
         return new HomePage();
     }
 
     public AddressPage login1(String uName, String pwd) throws Throwable{
-        Action.type(userName,uName);
-        Action.type(password,pwd);
-        Action.click(getDriver(),signInBtn);
+        action.type(userName,uName);
+        action.type(password,pwd);
+        action.click(getDriver(),signInBtn);
         return new AddressPage();
     }
     public AccountCreationPage createNewAccount (String newEmail) throws Throwable{
-        Action.type(emailForNewAccount,newEmail);
-        Action.click(getDriver(),createNewAccountBtn);
+        action.type(emailForNewAccount,newEmail);
+        action.click(getDriver(),createNewAccountBtn);
         return new AccountCreationPage();
 
     }

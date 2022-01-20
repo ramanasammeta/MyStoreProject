@@ -7,17 +7,18 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
 public class PaymentPage extends BaseClass {
+    Action action= new Action();
     @FindBy(xpath="//a[@title='Pay by bank wire']")
-    WebElement bankWireMethod;
+    private WebElement bankWireMethod;
 
     @FindBy(xpath="//a[@title='Pay by check.']")
-    WebElement payByCheckMethod;
+    private WebElement payByCheckMethod;
 
     public PaymentPage(){
         PageFactory.initElements(getDriver(),this);
     }
     public OrderSummaryPage clickOnPaymentMethod() throws Throwable{
-        Action.click(getDriver(),bankWireMethod);
+        action.click(getDriver(),bankWireMethod);
         return new OrderSummaryPage();
     }
 

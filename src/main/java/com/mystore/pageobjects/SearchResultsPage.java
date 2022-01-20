@@ -8,9 +8,9 @@ import org.openqa.selenium.support.PageFactory;
 
 
 public class SearchResultsPage extends BaseClass{
-
+    Action action= new Action();
     @FindBy(xpath="//a[@title='View']")
-    WebElement productResults;
+    private WebElement productResults;
 
     @FindBy(xpath="//*[@id=\"center_column\"]//img")
     private WebElement productResult;
@@ -19,11 +19,11 @@ public class SearchResultsPage extends BaseClass{
         PageFactory.initElements(getDriver(),this);
     }
     public boolean isProductAvailable(){
-        return Action.isDisplayed(getDriver(),productResult);
+        return action.isDisplayed(getDriver(),productResult);
     }
     public AddToCartPage clickOnProduct() throws Throwable{
-        Action.fluentWait(getDriver(), productResults, 10);
-        Action.JSClick(getDriver(),productResults);
+        action.fluentWait(getDriver(), productResults, 10);
+        action.JSClick(getDriver(),productResults);
         return new AddToCartPage();
 
     }
